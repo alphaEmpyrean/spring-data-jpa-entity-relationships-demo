@@ -4,13 +4,11 @@ import java.util.UUID;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-
-import org.springframework.data.rest.core.annotation.RestResource;
 
 @Entity
 @Table(name = "METADATA")
@@ -24,20 +22,20 @@ public class Metadata {
     }
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "METADATA_ID", columnDefinition = "uuid")
-    private UUID metadataId;
+    @Column(name = "CONTAINER_ID", columnDefinition = "uuid")
+    private UUID containerId;
 
-    @OneToOne(mappedBy = "metadata")
-    @RestResource(path = "metadata", rel = "metadata")
+    @OneToOne
+    @MapsId
+    @JoinColumn(name = "CONTAINER_ID")
     private Container container;
 
-    public UUID getMetadataId() {
-        return metadataId;
+    public UUID getContainerId() {
+        return containerId;
     }
 
-    public void setMetadataId(UUID metadataId) {
-        this.metadataId = metadataId;
+    public void setContainerId(UUID metadataId) {
+        this.containerId = metadataId;
     }
 
     public Container getContainer() {
