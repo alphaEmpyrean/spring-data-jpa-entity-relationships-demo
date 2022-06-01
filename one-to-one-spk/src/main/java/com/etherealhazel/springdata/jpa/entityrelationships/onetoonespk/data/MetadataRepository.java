@@ -5,9 +5,9 @@ import java.util.UUID;
 import com.etherealhazel.springdata.jpa.entityrelationships.onetoonespk.model.Metadata;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+import org.springframework.stereotype.Repository;
 
-@RepositoryRestResource(path = "metadata", collectionResourceRel = "metadata")
+@Repository
 public interface MetadataRepository extends JpaRepository<Metadata, UUID>{
     
 }
