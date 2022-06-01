@@ -8,4 +8,4 @@
  */
 
 rootProject.name = 'spring-data-jpa-entity-relations-demo'
-include('one-to-one-fk', 'one-to-one-spk', 'one-to-one-jt')
+include('one-to-one-fk', 'one-to-one-spk', 'one-to-one-jt', 'one-to-many')
