@@ -1,3 +1,6 @@
+//https://www.baeldung.com/spring-data-rest-relationships
+//https://www.baeldung.com/jpa-many-to-many
+
 package com.etherealhazel.springdata.jpa.entityrelationships.manytomany;
 
 import org.springframework.boot.SpringApplication;
